@@ -1,0 +1,20 @@
+<br />
+<center>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" <%= image_tag 'anonyme.jpg', alt: 'logo' %>
+  <div class="card-body">
+    <h5 class="card-title">Profil</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> First Name : <%= @user.first_name %> </li>
+    <li class="list-group-item"> Last Name : <%= @user.last_name %> </li>
+    <li class="list-group-item"> Description : <%= @user.description %> </li>
+    <li class="list-group-item"> Email : <%= @user.email%> </li>
+    <li class="list-group-item"> Age : <%= @user.age %> </li>
+    <li class="list-group-item"> Ville : <%= City.find_by(id: @user.city_id).name %> </li>
+  </ul>
+</div>
+<br />
+<p> Tu veux connaître tous les gossips de cette ville ? <%= link_to "Clique ici", city_path(@user.city_id) %>  </p>
+
+</center>

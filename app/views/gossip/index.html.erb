@@ -1,0 +1,17 @@
+<center>
+	<p>Bienvenue ! </p>
+
+<p>Voici la liste des Gossips : </p>
+
+<% @gossip.each_with_index do |gossip| %>
+<br />
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> Author : <%= gossip.user.first_name %> </h5>
+    <p class="card-text">  Title : <%= gossip.title %> </p>
+    <a <%= link_to "Voir", gossip_path(gossip.id) %> </a>
+  </div>
+</div>
+
+<% end %> 
+ </center>         

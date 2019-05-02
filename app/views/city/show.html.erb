@@ -1,0 +1,22 @@
+<br />
+<center>
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> City : <%= @city.name %> </li>
+    <li class="list-group-item"> Zip_Code : <%= @city.zip_code %> </li>
+  </ul>
+</div>
+<br />
+
+<% @gossip.each do |gossip| %>
+<br />
+<% if gossip.user.city_id == @city.id %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> Author : <%= gossip.user.first_name %> </h5>
+    <p class="card-text">  Title : <%= gossip.title %> </p>
+    <a <%= link_to "Voir", gossip_path(gossip.id) %> </a>
+  </div>
+</div>
+<% end %>
+<% end %> 
