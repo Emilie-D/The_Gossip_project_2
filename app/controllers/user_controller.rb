@@ -22,7 +22,7 @@ class UserController < ApplicationController
 			password: params[:password],
 			password_confirmation: params[:password_confirmation])
 		if @user.save
-			session[:user_id] = user.id
+			session[:user_id] = @user.id
 			flash[:success] = 'Successfully create user !'
 			redirect_to "/"
 		else
@@ -33,3 +33,4 @@ class UserController < ApplicationController
 	end
 
 end
+

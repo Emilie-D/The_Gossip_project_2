@@ -21,7 +21,7 @@
       <a class="nav-item nav-link" href="/home/team">Team</a>
       <a class="nav-item nav-link" href="/home/contact">Contact</a>
        <% if current_user %>
-  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+  Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>

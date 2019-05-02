@@ -9,7 +9,7 @@
 gem 'faker'
 
 10.times do
-	user = User.create!(first_name: Faker::JapaneseMedia::DragonBall.character, last_name: Faker::Games::Pokemon.name, description: Faker::Movies::HarryPotter.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city_id: rand(1..10))	
+	user = User.create!(first_name: Faker::JapaneseMedia::DragonBall.character, last_name: Faker::Games::Pokemon.name, description: Faker::Movies::HarryPotter.quote, email: Faker::Internet.email, age: Faker::Number.number(2), city_id: rand(1..10), password: Faker::Number.number(6))	
 end
 
 5.times do

@@ -7,8 +7,8 @@ end
 def create
  user = User.find_by(email: params[:email])
  if user && user.authenticate(params[:password])
-  @session[:user_id] = user.id
-  flash[:success] = ‘Successfully Logged In!’
+  session[:user_id] = user.id
+  flash[:success] = 'Successfully Logged In!'
   redirect_to '/'
  else
   flash[:warning] = 'Invalid Username or Password'

@@ -1,4 +1,5 @@
 class GossipController < ApplicationController 
+  before_action :user_is_logged_in, except: [:index]
 
 	
 	def index
@@ -10,8 +11,7 @@ class GossipController < ApplicationController
 	end
 
 	def create
-		user = User.find_by(first_name: "Anonymous")
-		@gossip = Gossip.new(title: params[:title], content: params[:content], user: user)
+	@gossip = Gossip.new(title: params[:title], content: params[:content], user_id: session[:user_id])
     if @gossip.save
       redirect_to "/"
     else

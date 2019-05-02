@@ -3,7 +3,6 @@ class CreateComments < ActiveRecord::Migration[5.2]
     create_table :comments do |t|
     t.string :content
     t.belongs_to :gossip
-    t.references :author, index: true
     t.timestamps
     end
   end
